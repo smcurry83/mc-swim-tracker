@@ -1,0 +1,16 @@
+.flex-container {
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  
+}
+
+.card {
+  border-radius: 5px;
+  border: solid 5px rgb(173, 228, 230);
+}
