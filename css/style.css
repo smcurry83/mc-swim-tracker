@@ -79,7 +79,7 @@ ul {
   border: 5px solid #8D724B;
 }
 
-.card-label {
+.card-label, .record-label {
   text-align: center;
   color: white;
   font-weight: 500;
@@ -119,13 +119,15 @@ ul {
 }
 
 .event-cell {
-  max-width: 150px;
+  min-width: 125px;
 }
 
 .time-cell {
   max-width: 75px;
+  text-align: right;
 }
 
 .year-cell {
   max-width: 75px;
+  text-align: right;
 }

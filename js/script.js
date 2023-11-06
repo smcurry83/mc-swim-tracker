@@ -1,14 +1,18 @@
-// Function to fetch CSV data
+// Function to fetch CSV data based on data-csv attribute
 async function fetchCSVData() {
-  const response = await fetch('../files/womens-yards-records.csv');
-  const data = await response.text();
-  return data;
+  const tableContainers = document.querySelectorAll('.table-container');
+  tableContainers.forEach(async (container) => {
+      const csvPath = container.dataset.csv;
+      const response = await fetch(csvPath);
+      const data = await response.text();
+      parseCSV(data, container);
+  });
 }
 
-// Function to parse CSV data
-function parseCSV(data) {
+// Function to parse CSV data and populate the table
+function parseCSV(data, tableContainer) {
   const rows = data.split('\n');
-  const tableContainer = document.getElementById('table-container');
+  const table = document.createElement('div');
 
   rows.forEach((row, index) => {
       if (index === 0) {
@@ -22,7 +26,7 @@ function parseCSV(data) {
               <div class="time-cell">${Time}</div>
               <div class="year-cell">${Year}</div>
           `;
-          tableContainer.appendChild(headerRow);
+          table.appendChild(headerRow);
       } else {
           // Create data rows
           const [Event, Swimmer, Time, Year] = row.split(',');
@@ -34,15 +38,16 @@ function parseCSV(data) {
               <div class="time-cell">${Time}</div>
               <div class="year-cell">${Year}</div>
           `;
-          tableContainer.appendChild(dataRow);
+          table.appendChild(dataRow);
       }
   });
+
+  tableContainer.appendChild(table);
 }
 
-// Main function to populate the table
-async function populateTable() {
-  const csvData = await fetchCSVData();
-  parseCSV(csvData);
+// Main function to populate the tables on all pages
+async function populateTables() {
+  await fetchCSVData();
 }
 
-populateTable();
+populateTables();
