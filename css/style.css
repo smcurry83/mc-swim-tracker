@@ -9,30 +9,32 @@ body {
 
 .header {
   width: 100vw;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #8D724B;
 }
 
-.bc-logo, .logo {
+.logo, .bc-logo {
   background-color: white;
+  padding-left: 5px;
   padding-right: 5px;
-
 }
+
 
 .links {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
 }
 
 ul {
   list-style: none;
-  padding-right: 20px;
+  padding: 5px;
 }
 
 .link {
@@ -54,31 +56,76 @@ ul {
   flex-direction: row;
   justify-content: flex-end;
   max-width: 1110px;
-  height: 10vh;
+  margin: 0 auto;
+}
+
+.line {
+  background-color: rgb(153, 0, 34);
+  padding: 5px;
 }
 
 .cards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 15px;
-  max-width: 1110px;
-  margin: 20px;
-  
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .card {
-  min-width: 350px;
-  height: 525px;
-  border-radius: 5px;
-  border: solid 5px #8D724B;
-}
-
-.records {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border: 5px solid #8D724B;
 }
 
-.event, .swimmer, .time, .year {
-  width: 200px;
+.card-label {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 5px;
+}
+
+#preview-frame {
+  padding: 5px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #8D724B;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Styles for table rows */
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #8D724B;
+  background-color: #f0f0f0;
+}
+
+/* Styles for table cells */
+.event-cell, .swimmer-cell, .time-cell, .year-cell {
+  flex: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  text-align: left;
+  /* border: solid 1px black; */
+}
+
+.event-cell {
+  max-width: 150px;
+}
+
+.time-cell {
+  max-width: 75px;
+}
+
+.year-cell {
+  max-width: 75px;
 }
