@@ -3,35 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
   <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <title>MC Swim Tracker</title>
 </head>
 <body>
-  <div class="flex-container">
-    <div class="nav">
-      <div class="home">
-        <a href="../index.html">Home</a>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo">
+        <img class="bc-logo" src="../img/logo_main.svg" alt="bridgewater eagles logo">
       </div>
-      <div class="links">
-
+      <div class="nav">
+        <ul class="links">
+          <li><a class="link" href="../index.html">Home</a></li>
+          <li><a class="link" href="./records.html">BC Records</a></li>
+        </ul>
       </div>
-
     </div>
-    <div class="swim-cloud">
-      <div class="cards">
-        <div class="card">
-          <div class="card-label">BC Top Times</div>
-          <iframe id="preview-frame" src="https://www.swimcloud.com/times/iframe/?gender=F&team=549&hide_gender=1" width="350px" height="500px" frameborder="0"></iframe>
-        </div>
-        <div class="card">
-          <div class="card-label">MC Latest Times</div>
-          <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1485129/iframe/?hide_header=true&splashes_type=latest" width="350px" height="500px" frameborder="0"></iframe>
-        </div>
-        <div class="card">
-          <div class="card-label">MC Fastest Times</div>
-          <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1485129/iframe/?hide_header=true&splashes_type=fastest" width="350px" height="500px" frameborder="0"></iframe>
+    <div class="line"></div>
+    <div class="container">
+      <div class="swim-cloud">
+        <div class="cards">
+          <div class="card">
+            <div class="card-label">BC Top Times</div>
+            <iframe id="preview-frame" src="https://www.swimcloud.com/times/iframe/?gender=F&team=549&hide_gender=1" width="350px" height="500px" frameborder="0"></iframe>
+          </div>
+          <div class="card">
+            <div class="card-label">MC Latest Times</div>
+            <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1485129/iframe/?hide_header=true&splashes_type=latest" width="350px" height="500px" frameborder="0"></iframe>
+          </div>
+          <div class="card">
+            <div class="card-label">MC Fastest Times</div>
+            <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1485129/iframe/?hide_header=true&splashes_type=fastest" width="350px" height="500px" frameborder="0"></iframe>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="footer">
+
     </div>
   </div>
 </body>

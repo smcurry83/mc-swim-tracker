@@ -1,6 +1,52 @@
-.flex-container {
+body {
+  background-color: rgb(153, 0, 34);
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.header {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #8D724B;
+}
+
+.bc-logo, .logo {
+  background-color: white;
+  padding-right: 5px;
+
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-right: 20px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.link:hover {
+  font-size: 18px;
+  background-color: rgb(153, 0, 34);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .nav {
@@ -25,7 +71,7 @@
   min-width: 350px;
   height: 525px;
   border-radius: 5px;
-  border: solid 5px rgb(173, 228, 230);
+  border: solid 5px #8D724B;
 }
 
 .records {
