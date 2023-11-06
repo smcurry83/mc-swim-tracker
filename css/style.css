@@ -27,22 +27,28 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* gap: 10px; */
+  /* padding: 10px; */
+  border: dashed 1px blue;
 }
 
 ul {
   list-style: none;
   padding: 5px;
+  border: dotted 1px orange;
 }
 
 .link {
+  min-width: 120px;
+  min-height: 40px;
   color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
   padding: 10px;
+  border: solid 1px green;
 }
 
 .link:hover {
@@ -57,7 +63,8 @@ ul {
   flex-direction: row;
   justify-content: flex-end;
   max-width: 1110px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  border: dotted 1px black;
 }
 
 .line {
@@ -92,7 +99,7 @@ ul {
   padding: 5px;
 }
 
-.table-container {
+.record-container, .split-container {
   display: flex;
   flex-direction: column;
   border: 5px solid #8D724B;
@@ -110,7 +117,9 @@ ul {
 }
 
 /* Styles for table cells */
-.event-cell, .swimmer-cell, .time-cell, .year-cell {
+.event-cell, .swimmer-cell, .time-cell, .year-cell,
+.split-event-cell, .split_1-cell, .split_2-cell,
+.split_3-cell, .split_4-cell, .date-cell {
   flex: 1;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -123,12 +132,17 @@ ul {
   min-width: 125px;
 }
 
-.time-cell {
+.spilt-event-cell {
+  min-width: 120px;
+}
+
+.time-cell, .split_1-cell, .split_2-cell,
+.split_3-cell, .split_4-cell {
   max-width: 75px;
   text-align: right;
 }
 
-.year-cell {
+.year-cell, .date-cell {
   max-width: 75px;
   text-align: right;
 }

@@ -1,16 +1,15 @@
-// Function to fetch CSV data based on data-csv attribute
-async function fetchCSVData() {
-  const tableContainers = document.querySelectorAll('.table-container');
-  tableContainers.forEach(async (container) => {
+// Function to fetch Women's and Men's Records CSV data based on data-csv attribute
+async function fetchRecordCSVData() {
+  const recordContainers = document.querySelectorAll('.record-container');
+  recordContainers.forEach(async (container) => {
       const csvPath = container.dataset.csv;
       const response = await fetch(csvPath);
       const data = await response.text();
-      parseCSV(data, container);
+      parseRecordCSV(data, container);
   });
 }
 
-// Function to parse CSV data and populate the table
-function parseCSV(data, tableContainer) {
+function parseRecordCSV(data, tableContainer) {
   const rows = data.split('\n');
   const table = document.createElement('div');
 
@@ -45,9 +44,64 @@ function parseCSV(data, tableContainer) {
   tableContainer.appendChild(table);
 }
 
-// Main function to populate the tables on all pages
-async function populateTables() {
-  await fetchCSVData();
+async function populateRecordTables() {
+  await fetchRecordCSVData();
 }
 
-populateTables();
+// Function to fetch McKenna's split CSV data based on data-csv attribute
+async function fetchSplitCSVData() {
+  const splitContainers = document.querySelectorAll('.split-container');
+  splitContainers.forEach(async (container) => {
+      const csvPath = container.dataset.csv;
+      const response = await fetch(csvPath);
+      const data = await response.text();
+      parseSplitCSV(data, container);
+  });
+}
+
+function parseSplitCSV(data, tableContainer) {
+  const rows = data.split('\n');
+  const table = document.createElement('div');
+
+  rows.forEach((row, index) => {
+      if (index === 0) {
+          // Create header row
+          const headerRow = document.createElement('div');
+          headerRow.classList.add('table-row');
+          const [Event, Split_1, Split_2, Split_3, Split_4, Date] = row.split(',');
+          headerRow.innerHTML = `
+              <div class="split-event-cell">${Event}</div>
+              <div class="split_1-cell">${Split_1}</div>
+              <div class="split_2-cell">${Split_2}</div>
+              <div class="split_3-cell">${Split_3}</div>
+              <div class="split_4-cell">${Split_4}</div>
+              <div class="date-cell">${Date}</div>
+
+          `;
+          table.appendChild(headerRow);
+      } else {
+          // Create data rows
+          const [Event, Split_1, Split_2, Split_3, Split_4, Date] = row.split(',');
+          const dataRow = document.createElement('div');
+          dataRow.classList.add('table-row');
+          dataRow.innerHTML = `
+              <div class="split-event-cell">${Event}</div>
+              <div class="split_1-cell">${Split_1}</div>
+              <div class="split_2-cell">${Split_2}</div>
+              <div class="split_3-cell">${Split_3}</div>
+              <div class="split_4-cell">${Split_4}</div>
+              <div class="date-cell">${Date}</div>
+          `;
+          table.appendChild(dataRow);
+      }
+  });
+
+  tableContainer.appendChild(table);
+}
+
+async function populateSplitTables() {
+  await fetchSplitCSVData();
+}
+
+populateRecordTables();
+populateSplitTables();
