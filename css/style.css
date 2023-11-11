@@ -138,3 +138,9 @@ body {
   max-width: 75px;
   text-align: right;
 }
+
+#video-links {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
